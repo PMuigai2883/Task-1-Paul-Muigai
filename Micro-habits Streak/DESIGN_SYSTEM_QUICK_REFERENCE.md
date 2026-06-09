@@ -346,20 +346,6 @@ input:focus {
     border-color: var(--accent-primary);
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
-```
-
----
-
-## Tips & Tricks
-
-1. **Always use variables** - Never hardcode colors or sizes
-2. **Use semantic colors** - Use `--text-primary` not `--accent-primary` for text
-3. **Respect spacing scale** - Use only defined spacing values
-4. **Support dark mode** - All variables automatically adapt
-5. **Test responsive** - Check mobile, tablet, desktop
-6. **Use shadows subtly** - `--shadow-sm` for most elements
-7. **Animate smoothly** - Use `--transition-base` by default
-8. **Keep z-index scale** - Use the defined scale, don't create new values
 
 ---
 
@@ -390,5 +376,5 @@ users/
           {stepId}/
             title: ""
 
-**Last Updated:** 2024
+
 **Version:** 1.0
