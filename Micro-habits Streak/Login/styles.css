@@ -1,0 +1,316 @@
+/* ========================================
+   LOGIN PAGE STYLES
+   ======================================== */
+
+/* Main Display */
+.main-display {
+    padding: var(--space-2xl);
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    scrollbar-width: none;
+}
+
+.main-display::-webkit-scrollbar {
+    display: none;
+}
+
+/* Login Container */
+.login-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Page Title */
+.logon-page-title {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.logon-page-title h1 {
+    font-size: var(--font-size-4xl);
+    color: var(--text-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Auth Sections */
+.auth-section {
+    margin-bottom: var(--space-3xl);
+}
+
+/* Login/Signup Prompt */
+.login-prompt, .signup-prompt {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.login-prompt p, .signup-prompt p {
+    margin: 0;
+    font-size: var(--font-size-base);
+}
+
+/* Auth Forms */
+.auth-form {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.auth-form.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    font-size: var(--font-size-2xl);
+}
+
+.auth-form h3 {
+    font-size: var(--font-size-lg);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+}
+
+.form-group input {
+    width: 100%;
+    padding: var(--space-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-fast);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input::placeholder {
+    color: var(--text-tertiary);
+}
+
+/* Form Row (for side-by-side fields) */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+/* Password Section */
+.password-section {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-2xl);
+}
+
+.form-actions button {
+    flex: 1;
+    min-height: 44px;
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    margin: var(--space-3xl) 0;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.divider span {
+    position: relative;
+    background: var(--bg-primary);
+    padding: 0 var(--space-md);
+    display: inline-block;
+    z-index: 1;
+}
+
+/* Utility Classes */
+.btn-link {
+    background: none;
+    border: none;
+    color: var(--accent-primary);
+    cursor: pointer;
+    font-size: inherit;
+    font-weight: var(--font-weight-semibold);
+    padding: 0;
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+}
+
+.btn-link:hover {
+    color: var(--accent-secondary);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.mt-lg {
+    margin-top: var(--space-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-display {
+        padding: var(--space-lg);
+    }
+
+    .login-container {
+        max-width: 100%;
+    }
+
+    .logon-page-title h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    .auth-form {
+        padding: var(--space-lg);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .divider {
+        margin: var(--space-2xl) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-display {
+        padding: var(--space-md);
+    }
+
+    .logon-page-title h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .auth-form {
+        padding: var(--space-lg);
+        border-radius: var(--radius-md);
+    }
+
+    .form-actions {
+        margin-top: var(--space-lg);
+    }
+}
+
+/* ========================================
+   ALERT MESSAGES
+   ======================================== */
+
+.alert {
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+    font-weight: var(--font-weight-medium);
+    animation: slideDown 300ms ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background: var(--success-light);
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: var(--error-light);
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-warning {
+    background: var(--warning-light);
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.alert-info {
+    background: var(--info-light);
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.alert-dismissible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert-dismissible .btn-close {
+    background: none;
+    border: none;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+
+.alert-dismissible .btn-close:hover {
+    opacity: 1;
+}
+
+.alert strong {
+    font-weight: var(--font-weight-bold);
+    margin-right: var(--space-sm);
+}

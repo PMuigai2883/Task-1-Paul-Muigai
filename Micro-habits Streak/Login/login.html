@@ -1,0 +1,110 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - HabitCraft</title>
+    
+    <!-- Global design system CSS -->
+    <link rel="stylesheet" href="../Index/design-system.css">
+
+    <!-- Login-specific CSS (overrides if needed) -->
+    <link rel="stylesheet" href="login.css">
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="../Index/firebase.js" defer></script>
+    <script src="login.js" defer></script>
+</head>
+<body>  
+        <div class="login-container">
+            <div class="logon-page-title">
+                <h1>Welcome to Micro-Habits Streak</h1>
+            </div>
+
+            <!-- Login Section -->
+            <div id="login-section" class="auth-section">
+                <div class="login-prompt">
+                    <p>To proceed, please <button id="toggle-login-btn" class="btn-link">login</button></p>
+                </div>
+
+                <form id="login-form" class="auth-form login-form hidden">
+                    <h2>Welcome back</h2>
+                    
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary btn-block">Sign In</button>
+                        <button type="button" id="hide-login-btn" class="btn-secondary btn-block">Cancel</button>
+                    </div>
+
+                    <p class="text-center text-secondary mt-lg">
+                        Don't have an account? <button type="button" id="to-signup-btn" class="btn-link">Sign up</button>
+                    </p>
+                </form>
+            </div>
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <!-- Signup Section -->
+            <div id="signup-section" class="auth-section">
+                <div class="signup-prompt">
+                    <p>Create an account <button id="toggle-signup-btn" class="btn-link">here</button></p>
+                </div>
+
+                <form id="signup-form" class="auth-form signup-form hidden">
+                    <h2>Create Your Account</h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="password-section">
+                        <h3>Create a Password</h3>
+                        <div class="form-group">
+                            <label for="signup-password">New Password</label>
+                            <input type="password" id="signup-password" placeholder="Create a password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password-confirm">Confirm Password</label>
+                            <input type="password" id="signup-password-confirm" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary btn-block">Create Account</button>
+                        <button type="reset" class="btn-secondary btn-block">Clear</button>
+                        <button type="button" id="hide-signup-btn" class="btn-secondary btn-block">Cancel</button>
+                    </div>
+
+                    <p class="text-center text-secondary mt-lg">
+                        Already have an account? <button type="button" id="to-login-btn" class="btn-link">Sign in</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

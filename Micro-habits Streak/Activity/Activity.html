@@ -1,0 +1,103 @@
+<body>
+        <main class="main-display">
+            <div class="back-link">
+                <a href="../Index/Index.html">Home</a>
+            </div>
+            <div class="commitments-container">
+                <!-- Header Section -->
+                <div class="commitments-header">
+                    <h1>My Commitments</h1>
+                    <button class="add-commitment-btn" id="openModalBtn">+ Add New Commitment</button>
+                </div>
+                <!-- Add Commitment Modal -->
+                <div id="commitmentModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Add New Commitment</h2>
+                            <button class="close-modal" id="closeModalBtn">&times;</button>
+                        </div>
+                        <form id="commitmentForm" class="commitment-form">
+                            <div class="form-group">
+                                <label for="commitmentTitle">Commitment Title *</label>
+                                <input type="text" id="commitmentTitle" placeholder="e.g., Learn React" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="commitmentDescription">Description</label>
+                                <textarea id="commitmentDescription" placeholder="Describe your commitment in detail..." rows="3"></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="targetDate">Target Completion Date *</label>
+                                    <input type="date" id="targetDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="commitmentType">Commitment Type *</label>
+                                    <select id="commitmentType" required>
+                                        <option value="">Select Type</option>
+                                        <option value="short-term">Short-term (1-3 months)</option>
+                                        <option value="long-term">Long-term (3+ months)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                                <div class="form-actions">
+                                        <button type="submit" class="btn-primary">Create Commitment</button>
+                                        <button type="button" class="btn-secondary" id="cancelModalBtn">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+
+                <!-- Commitments List Section -->
+                <div class="commitments-section">
+                    <div class="commitments-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="short-term">Short-term</button>
+                        <button class="filter-btn" data-filter="long-term">Long-term</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+
+                    <div id="commitmentsList" class="commitments-list">
+                        <!-- Commitments will be populated here by JavaScript -->
+                    </div>
+
+                    <div id="emptyState" class="empty-state">
+                        <p>No commitments yet. Start by adding your first commitment!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Step Modal -->
+            <div id="stepModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Add Step to Commitment</h2>
+                        <button class="close-modal" id="closeStepModalBtn">&times;</button>
+                    </div>
+                    <form id="stepForm" class="step-form">
+                        <div class="form-group">
+                            <label for="stepTitle">Step Title *</label>
+                            <input type="text" id="stepTitle" placeholder="e.g., Complete Chapter 1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stepDescription">Description</label>
+                            <textarea id="stepDescription" placeholder="Describe this step..." rows="2"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stepDueDate">Due Date</label>
+                            <input type="date" id="stepDueDate">
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Add Step</button>
+                            <button type="button" class="btn-secondary" id="cancelStepModalBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
